@@ -1,4 +1,4 @@
-type Weapon = {
+export type Weapon = {
     id: WeaponEnum;
     name: string;
     description: string;
@@ -8,7 +8,7 @@ type Weapon = {
 };
 
 
-enum WeaponEnum {
+export enum WeaponEnum {
     Hand,
     WoodenSword,
     IronSword,

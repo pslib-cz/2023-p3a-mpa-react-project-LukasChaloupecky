@@ -1,5 +1,5 @@
 import { useReducer, useState } from 'react'
-// import './App.css'
+import './App.css'
 import Registration from './pages/Registration'
 import GameState, { GameContext, initialGameState } from './components/GameState'
 import { DataProvider } from './components/DataProvider'

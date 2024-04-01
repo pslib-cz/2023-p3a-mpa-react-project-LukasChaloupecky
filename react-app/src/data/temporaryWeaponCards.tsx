@@ -1,3 +1,4 @@
+import { Weapon, WeaponEnum } from "../components/Weapon";
 
 
 const InitialWeaponCards: Weapon[] = [

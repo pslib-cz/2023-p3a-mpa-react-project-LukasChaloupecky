@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import { ArmorEnum } from "./Armor";
+import { WeaponEnum } from "./Weapon";
 
 // GameState.tsx
 //export const GameContext = createContext<GameState | undefined>(undefined);
@@ -20,7 +21,7 @@ type GameState = {
     score: number;
     money: number;
     Armors: ArmorEnum[];
-    Weapon : WeaponEnum;
+    Weapon : WeaponEnum.Hand;
     Cards: Card[];
     currentSpot : number; // ? Place on the board
 };
