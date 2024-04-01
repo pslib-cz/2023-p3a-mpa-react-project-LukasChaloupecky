@@ -34,7 +34,7 @@ const InitialArmor : ArmorInventory = {
 // Define the initial state of the game
 type GameState = { 
     isRegistered : boolean;
-    lives: number;
+    HP: number;
     person : Person;
     score: number;
     money: number;
@@ -45,7 +45,7 @@ type GameState = {
 };
 export const initialGameState : GameState = {
     isRegistered : false,
-    lives: 3,
+    HP: 100,
     person : { firstName: '', lastName: ''},
     score: 0,
     money: 0,
@@ -62,20 +62,47 @@ export const initialGameState : GameState = {
 type Action =
     | { type: 'INCREMENT_LIVES', payload: number }
     | { type: 'DECREASE_LIVES', payload: number}
-    | { type: 'MOVE_PLAYER', payload: number}
-    | {type : 'UPDATE_PERSON', payload : Person}
+    | { type: 'CHANGE_ARMOR', Armor: Armor }
+    | { type: 'CHANGE_WEAPON', weapon: Weapon }
+    | { type: 'MOVE_PLAYER', steps: number}
+    | { type: 'UPDATE_PERSON', payload: Person}
+    | { type: 'REMOVE_CARD', cardIndex:number}
+    | { type: 'ADD_CARD', Card: Card}
     | { type: 'GAME_OVER' }
-    | {type : "IS_REGISTERED", payload : boolean};
+    | { type: "IS_REGISTERED", payload: boolean};
 
 // Define the reducer function
 const GameState = (state = initialGameState, action: Action) => {
     switch (action.type) {
         case 'INCREMENT_LIVES':
-            return { ...state, lives: state.lives + action.payload };
+            return { ...state, lives: state.HP + action.payload };
         case 'DECREASE_LIVES':
-            return { ...state, lives: state.lives - action.payload};
+            return { ...state, lives: state.HP - action.payload};
+        case 'CHANGE_ARMOR':
+            const armor = action.Armor;
+
+            if (armor.type & ArmorTypeEnum.Helmet) {
+                return { ...state, Armors: { ...state.Armors, Helmet: armor } };
+            } 
+            else if (armor.type & ArmorTypeEnum.Chestplate) {
+                return { ...state, Armors: { ...state.Armors, Chestplate: armor } };
+            } 
+            else if (armor.type & ArmorTypeEnum.Leggings) {
+                return { ...state, Armors: { ...state.Armors, Leggings: armor } };
+            } 
+            else if (armor.type & ArmorTypeEnum.Boots) {
+                return { ...state, Armors: { ...state.Armors, Boots: armor } };
+            } else {
+                throw new Error("The Armor Selected did not contain valid ArmorType - which is enum - in reducer");
+            }
+        case 'CHANGE_WEAPON':
+            return { ...state, Weapon: action.weapon };
         case 'MOVE_PLAYER':
-            return { ...state, CurrentSpot: state.currentSpot + action.payload};
+            return { ...state, CurrentSpot: state.currentSpot + action.steps};
+        case 'REMOVE_CARD':
+            return { ...state, Cards: state.Cards.filter((card, index) => index !== action.cardIndex) };
+        case 'ADD_CARD':
+            return { ...state, Cards: [ ...state.Cards, action.Card ] };
         case 'GAME_OVER':
             return { ...state, lives: 0 };
         case 'UPDATE_PERSON':

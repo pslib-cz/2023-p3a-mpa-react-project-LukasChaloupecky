@@ -11,11 +11,11 @@ const MainPanel: React.FC = () => {
         <div className='panel'>
             <div className='panel__mainInfo'>
                 <p>Name: {Reducer?.state.person.firstName} {Reducer?.state.person.lastName}</p>
-                <p>Lives: {Reducer?.state.lives}</p>
+                <p>Health: {Reducer?.state.HP}</p>
                 <p>Score: {Reducer?.state.score}</p>
                 <p>Money: {Reducer?.state.money}</p>
             </div>
-            
+
             <div className='panel__armor'>
 
                 <div key={0} className='armorCard'>
