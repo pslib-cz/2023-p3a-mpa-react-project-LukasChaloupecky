@@ -1,7 +1,9 @@
 import { createContext } from "react";
-import { ArmorEnum, ArmorTypeEnum } from "./Armor";
-import { WeaponEnum } from "./Weapon";
+import { Armor, ArmorEnum, ArmorTypeEnum } from "./Armor";
+import { Weapon, WeaponEnum } from "./Weapon";
 import { Person } from "./Person";
+import { InitialArmorCards } from "../data/temporaryArmorCards";
+import InitialWeaponCards from "../data/temporaryWeaponCards";
 
 // GameState.tsx
 //export const GameContext = createContext<GameState | undefined>(undefined);
@@ -15,16 +17,18 @@ type ArmorSlot = {
 */
 
 type ArmorInventory = { 
-    Helmet : ArmorEnum,
-    Chestplate : ArmorEnum,
-    Leggings : ArmorEnum,
-    Boots : ArmorEnum
+    Helmet : Armor,
+    Chestplate : Armor,
+    Leggings : Armor,
+    Boots : Armor
 };
+
+
 const InitialArmor : ArmorInventory = {
-    Helmet : ArmorEnum.None,
-    Chestplate : ArmorEnum.None,
-    Leggings : ArmorEnum.None,
-    Boots : ArmorEnum.None
+    Helmet : InitialArmorCards[0],
+    Chestplate : InitialArmorCards[0],
+    Leggings : InitialArmorCards[0],
+    Boots : InitialArmorCards[0]
 };
 
 // Define the initial state of the game
@@ -35,7 +39,7 @@ type GameState = {
     score: number;
     money: number;
     Armors: ArmorInventory;
-    Weapon : WeaponEnum.Hand;
+    Weapon : Weapon;
     Cards: Card[];
     currentSpot : number; // ? Place on the board
 };
@@ -46,7 +50,7 @@ export const initialGameState : GameState = {
     score: 0,
     money: 0,
     Armors : InitialArmor,
-    Weapon : WeaponEnum.Hand,
+    Weapon : InitialWeaponCards[0],
     Cards : [ ],
     currentSpot : 0
 };

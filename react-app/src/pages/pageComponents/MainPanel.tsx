@@ -15,21 +15,26 @@ const MainPanel: React.FC = () => {
                 <p>Score: {Reducer?.state.score}</p>
                 <p>Money: {Reducer?.state.money}</p>
             </div>
+            
             <div className='panel__armor'>
 
                 <div key={0} className='armorCard'>
-                    {Data?.Armors.find((a) => a.id === Reducer?.state.Armors.Helmet)?.name}
+                    {Reducer?.state.Armors.Helmet.name}
                 </div>
                 <div key={1} className='armorCard'>
-                    {Data?.Armors.find((a) => a.id === Reducer?.state.Armors.Chestplate)?.name}
+                    {Reducer?.state.Armors.Chestplate.name}
                 </div>
                 <div key={2} className='armorCard'>
-                    {Data?.Armors.find((a) => a.id === Reducer?.state.Armors.Leggings)?.name}
+                    {Reducer?.state.Armors.Leggings.name}
                 </div>
                 <div key={3} className='armorCard'>
-                    {Data?.Armors.find((a) => a.id === Reducer?.state.Armors.Boots)?.name}
+                    {Reducer?.state.Armors.Boots.name}
                 </div>
 
+            </div>
+
+            <div className='panel__weapon'>
+                {Reducer?.state.Weapon.name}
             </div>
         </div>
     );

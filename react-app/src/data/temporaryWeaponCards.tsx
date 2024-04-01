@@ -1,5 +1,6 @@
 import { Weapon, WeaponEnum } from "../components/Weapon";
 
+// TODO: Later change to json file 
 
 const InitialWeaponCards: Weapon[] = [
     {
