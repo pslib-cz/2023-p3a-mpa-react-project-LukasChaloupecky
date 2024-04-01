@@ -1,5 +1,5 @@
 type Weapon = {
-    id: number;
+    id: WeaponEnum;
     name: string;
     description: string;
     imageUrl: string;

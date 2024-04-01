@@ -1,5 +1,6 @@
 export type Armor = {
-    id: number;
+    id: ArmorEnum;
+    type: ArmorTypeEnum;
     name: string;
     description: string;
     imageUrl: string;
@@ -7,14 +8,20 @@ export type Armor = {
     defense: number;
 };
 
+export enum ArmorTypeEnum {
+    Helmet,
+    Chestplate,
+    Leggings,
+    Boots,
+ }
 
 export enum ArmorEnum {
     LeaherHeat,
-    LeatherChest,
-    LeatherLegs,
+    LeatherChestplate,
+    LeatherLeggings,
     LeatherBoots,
     IronHelmet,
-    IronChest,
-    IronLegs,
+    IronChestplate,
+    IronLeggings,
     IronBoots,
 }
