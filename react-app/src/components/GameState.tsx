@@ -1,16 +1,12 @@
 import { createContext } from "react";
+import { ArmorEnum } from "./Armor";
 
 // GameState.tsx
 //export const GameContext = createContext<GameState | undefined>(undefined);
 export const GameContext = createContext<{ state: GameState; dispatch: React.Dispatch<Action> } | undefined>(undefined);
-type Armor = {
-    id: number;
-    name: string;
-    description: string;
-    imageUrl: string;
-    price: number;
-    defense: number;
-};
+
+
+
 type Person = { 
     firstName: string;
     lastName: string;
@@ -23,9 +19,10 @@ type GameState = {
     person : Person;
     score: number;
     money: number;
-    Armors: Armor[];
+    Armors: ArmorEnum[];
+    Weapon : WeaponEnum;
     Cards: Card[];
-    CurrentSpot : number; // ? Place on the board
+    currentSpot : number; // ? Place on the board
 };
 
 
@@ -36,8 +33,9 @@ export const initialGameState : GameState = {
     score: 0,
     money: 0,
     Armors : [ ],
+    Weapon : WeaponEnum.Hand,
     Cards : [ ],
-    CurrentSpot : 0
+    currentSpot : 0
 };
 
 // Define the action types
@@ -57,7 +55,7 @@ const GameState = (state = initialGameState, action: Action) => {
         case 'DECREASE_LIVES':
             return { ...state, lives: state.lives - action.payload};
         case 'MOVE_PLAYER':
-            return { ...state, CurrentSpot: state.CurrentSpot + action.payload};
+            return { ...state, CurrentSpot: state.currentSpot + action.payload};
         case 'GAME_OVER':
             return { ...state, lives: 0 };
         case 'UPDATE_PERSON':
