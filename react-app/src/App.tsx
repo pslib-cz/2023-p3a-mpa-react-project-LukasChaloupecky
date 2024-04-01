@@ -5,6 +5,7 @@ import GameState, { GameContext, initialGameState } from './components/GameState
 import { DataProvider } from './components/DataProvider'
 import { InitialArmorCards } from './data/temporaryArmorCards'
 import InitialWeaponCards from './data/temporaryWeaponCards'
+import TablePage from './pages/TablePage'
 
 function App() {
   const [state, dispatch] = useReducer(GameState, initialGameState)
@@ -13,17 +14,30 @@ function App() {
 
   return (
     <>
-      {state.isRegistered ? (
-        <>
-          {state.person.firstName}
-        </>
-      ) : (
+    {state.isRegistered ? 
+      (
         <DataProvider.Provider value={{ Armors: Armors, Weapons: Weapons, Cards: [] }}>
         <GameContext.Provider value={{ state: state, dispatch: dispatch }}>
-          <Registration />
+          
+          <TablePage />
+
+
         </GameContext.Provider>
-      </DataProvider.Provider>
-      )}
+        </DataProvider.Provider>
+      ) 
+      : 
+      (
+        <DataProvider.Provider value={{ Armors: Armors, Weapons: Weapons, Cards: [] }}>
+        <GameContext.Provider value={{ state: state, dispatch: dispatch }}>
+
+
+          <Registration />
+
+
+        </GameContext.Provider>
+        </DataProvider.Provider>
+      )
+    }
     </>
   )
 }
