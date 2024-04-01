@@ -10,7 +10,9 @@ import TablePage from './pages/TablePage'
 function App() {
   const [state, dispatch] = useReducer(GameState, initialGameState)
   const [Armors, setArmors] = useState(InitialArmorCards);
+  console.log("🚀 ~ App ~ InitialArmorCards:", InitialArmorCards)
   const [Weapons, setWeapons] = useState(InitialWeaponCards);
+  console.log("🚀 ~ App ~ InitialWeaponCards:", InitialWeaponCards)
 
   return (
     <>

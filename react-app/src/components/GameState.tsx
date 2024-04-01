@@ -1,17 +1,31 @@
 import { createContext } from "react";
-import { ArmorEnum } from "./Armor";
+import { ArmorEnum, ArmorTypeEnum } from "./Armor";
 import { WeaponEnum } from "./Weapon";
+import { Person } from "./Person";
 
 // GameState.tsx
 //export const GameContext = createContext<GameState | undefined>(undefined);
 export const GameContext = createContext<{ state: GameState; dispatch: React.Dispatch<Action> } | undefined>(undefined);
 
-
-
-type Person = { 
-    firstName: string;
-    lastName: string;
+/*
+type ArmorSlot = {
+    ArmorType : ArmorTypeEnum;
+    ArmorEnum : ArmorEnum;
 }
+*/
+
+type ArmorInventory = { 
+    Helmet : ArmorEnum,
+    Chestplate : ArmorEnum,
+    Leggings : ArmorEnum,
+    Boots : ArmorEnum
+};
+const InitialArmor : ArmorInventory = {
+    Helmet : ArmorEnum.None,
+    Chestplate : ArmorEnum.None,
+    Leggings : ArmorEnum.None,
+    Boots : ArmorEnum.None
+};
 
 // Define the initial state of the game
 type GameState = { 
@@ -20,24 +34,25 @@ type GameState = {
     person : Person;
     score: number;
     money: number;
-    Armors: ArmorEnum[];
+    Armors: ArmorInventory;
     Weapon : WeaponEnum.Hand;
     Cards: Card[];
     currentSpot : number; // ? Place on the board
 };
-
-
 export const initialGameState : GameState = {
     isRegistered : false,
     lives: 3,
     person : { firstName: '', lastName: ''},
     score: 0,
     money: 0,
-    Armors : [ ],
+    Armors : InitialArmor,
     Weapon : WeaponEnum.Hand,
     Cards : [ ],
     currentSpot : 0
 };
+
+
+
 
 // Define the action types
 type Action =

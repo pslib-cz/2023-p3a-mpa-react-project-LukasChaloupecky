@@ -5,6 +5,15 @@ import { Armor, ArmorEnum, ArmorTypeEnum } from "../components/Armor";
 
 export const InitialArmorCards: Armor[] = [
     {
+        id: ArmorEnum.None,
+        type: ArmorTypeEnum.Helmet | ArmorTypeEnum.Chestplate | ArmorTypeEnum.Leggings | ArmorTypeEnum.Boots,
+        name: "None",
+        description: "No armor",
+        imageUrl: "https://example.com/none.png",
+        price: 0,
+        defense: 0,
+    },
+    {
         id: ArmorEnum.LeaherHeat,
         type: ArmorTypeEnum.Helmet,
         name: "Leather Helmet",

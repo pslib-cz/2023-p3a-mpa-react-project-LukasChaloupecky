@@ -9,13 +9,14 @@ export type Armor = {
 };
 
 export enum ArmorTypeEnum {
-    Helmet,
-    Chestplate,
-    Leggings,
-    Boots,
+    Helmet = 0,
+    Chestplate = 1,
+    Leggings = 2,
+    Boots = 3,
  }
 
 export enum ArmorEnum {
+    None,
     LeaherHeat,
     LeatherChestplate,
     LeatherLeggings,
@@ -25,3 +26,5 @@ export enum ArmorEnum {
     IronLeggings,
     IronBoots,
 }
+
+
