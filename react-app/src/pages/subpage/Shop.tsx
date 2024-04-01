@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+// ? The Shopping page
 const Shop: React.FC = () => {
     return (
         <div>

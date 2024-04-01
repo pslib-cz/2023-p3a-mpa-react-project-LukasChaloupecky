@@ -5,12 +5,12 @@ import GameState, { GameContext, initialGameState } from './components/GameState
 import { DataProvider } from './components/DataProvider'
 import { InitialArmorCards } from './data/temporaryArmorCards'
 import InitialWeaponCards from './data/temporaryWeaponCards'
-import TablePage from './pages/TablePage'
+import TablePage, { MainPage } from './pages/MainPage'
+import MainPanel from './pages/pageComponents/MainPanel'
 
 function App() {
   const [state, dispatch] = useReducer(GameState, initialGameState)
-  // TODO_0: Create a valid collection of enemies on the board
-  // TODO_1: Create a valid collection of benefits on the board
+
 
 
   const [Armors, setArmors] = useState(InitialArmorCards);
@@ -25,7 +25,7 @@ function App() {
         <DataProvider.Provider value={{ Armors: Armors, Weapons: Weapons, Cards: [] }}>
         <GameContext.Provider value={{ state: state, dispatch: dispatch }}>
           
-          <TablePage />
+          <MainPage />
 
 
         </GameContext.Provider>
