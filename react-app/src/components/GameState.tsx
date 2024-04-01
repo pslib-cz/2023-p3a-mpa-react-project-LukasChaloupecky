@@ -38,6 +38,7 @@ type GameState = {
     person : Person;
     score: number;
     money: number;
+    charm: number; // ? Determines the prices in the shop
     Armors: ArmorInventory;
     Weapon : Weapon;
     Cards: Card[];
@@ -49,6 +50,7 @@ export const initialGameState : GameState = {
     person : { firstName: '', lastName: ''},
     score: 0,
     money: 0,
+    charm: 0,
     Armors : InitialArmor,
     Weapon : InitialWeaponCards[0],
     Cards : [ ],
@@ -60,8 +62,8 @@ export const initialGameState : GameState = {
 
 // Define the action types
 type Action =
-    | { type: 'INCREMENT_LIVES', payload: number }
-    | { type: 'DECREASE_LIVES', payload: number}
+    | { type: 'INCREMENT_HP', payload: number }
+    | { type: 'DECREASE_HP', payload: number}
     | { type: 'CHANGE_ARMOR', Armor: Armor }
     | { type: 'CHANGE_WEAPON', weapon: Weapon }
     | { type: 'MOVE_PLAYER', steps: number}
@@ -74,9 +76,9 @@ type Action =
 // Define the reducer function
 const GameState = (state = initialGameState, action: Action) => {
     switch (action.type) {
-        case 'INCREMENT_LIVES':
+        case 'INCREMENT_HP':
             return { ...state, lives: state.HP + action.payload };
-        case 'DECREASE_LIVES':
+        case 'DECREASE_HP':
             return { ...state, lives: state.HP - action.payload};
         case 'CHANGE_ARMOR':
             const armor = action.Armor;

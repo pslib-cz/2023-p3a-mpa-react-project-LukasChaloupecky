@@ -9,6 +9,10 @@ import TablePage from './pages/TablePage'
 
 function App() {
   const [state, dispatch] = useReducer(GameState, initialGameState)
+  // TODO_0: Create a valid collection of enemies on the board
+  // TODO_1: Create a valid collection of benefits on the board
+
+
   const [Armors, setArmors] = useState(InitialArmorCards);
   console.log("🚀 ~ App ~ InitialArmorCards:", InitialArmorCards)
   const [Weapons, setWeapons] = useState(InitialWeaponCards);

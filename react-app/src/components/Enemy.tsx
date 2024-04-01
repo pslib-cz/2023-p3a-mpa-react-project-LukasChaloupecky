@@ -2,7 +2,8 @@ type Enemy = {
     id: EnemyEnum;
     name: string;
     description: string;
-    imageUrl: string;
+    cardImageUrl: string; // ? BIG IMAGE ON THE CARD
+    smallImageUrl: string; // ? SMALL IMAGE SHOWING THAT THE ENEMY IS ON THE BOARD AT CERTAIN LOCATION
     reward: number; // ? How much gold the player gets for defeating the enemy
     attack: number; // ? How much damage the enemy does
     defense: number;
