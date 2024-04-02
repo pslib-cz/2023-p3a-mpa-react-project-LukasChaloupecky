@@ -8,6 +8,7 @@ export type Weapon = {
 };
 
 
+
 export enum WeaponEnum {
     Hand,
     WoodenSword,
