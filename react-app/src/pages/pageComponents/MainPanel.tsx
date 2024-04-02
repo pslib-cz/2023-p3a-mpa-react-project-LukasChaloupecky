@@ -4,7 +4,7 @@ import { DataProvider } from '../../components/DataProvider';
 
 const MainPanel: React.FC = () => {
     const Reducer = useContext(GameContext);
-    const Data = useContext(DataProvider);
+    // const Data = useContext(DataProvider);
     
     // TODO: Change className to instances from imported css
     return (
