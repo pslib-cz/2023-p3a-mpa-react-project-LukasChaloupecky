@@ -9,6 +9,7 @@ type Enemy = {
     defense: number;
     health: number;
     type: EnemyTypeEnum; // ? Defines what cards are the most effective
+    difficulty: number; // ? At what difficulty will the enemy be avalible
 }
 
 enum EnemyEnum { 

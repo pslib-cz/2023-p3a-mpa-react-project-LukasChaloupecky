@@ -16,15 +16,15 @@ export enum ArmorTypeEnum {
  }
 
 export enum ArmorEnum {
-    None,
-    LeaherHeat,
-    LeatherChestplate,
-    LeatherLeggings,
-    LeatherBoots,
-    IronHelmet,
-    IronChestplate,
-    IronLeggings,
-    IronBoots,
+    None = 0,
+    LeaherHeat = 1,
+    LeatherChestplate = 2,
+    LeatherLeggings = 3,
+    LeatherBoots = 4,
+    IronHelmet = 5,
+    IronChestplate = 6,
+    IronLeggings = 7,
+    IronBoots = 8,
 }
 
 
