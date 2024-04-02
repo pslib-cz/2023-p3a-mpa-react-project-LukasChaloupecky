@@ -12,28 +12,26 @@ function App() {
   const [state, dispatch] = useReducer(GameState, initialGameState)
 
 
-
+  /*
   const [Armors, setArmors] = useState(InitialArmorCards);
   console.log("🚀 ~ App ~ InitialArmorCards:", InitialArmorCards)
   const [Weapons, setWeapons] = useState(InitialWeaponCards);
   console.log("🚀 ~ App ~ InitialWeaponCards:", InitialWeaponCards)
-
+  */
+ 
   return (
     <>
     {state.isRegistered ? 
       (
-        <DataProvider.Provider value={{ Armors: Armors, Weapons: Weapons, Cards: [] }}>
         <GameContext.Provider value={{ state: state, dispatch: dispatch }}>
           
           <MainPage />
 
 
         </GameContext.Provider>
-        </DataProvider.Provider>
       ) 
       : 
       (
-        <DataProvider.Provider value={{ Armors: Armors, Weapons: Weapons, Cards: [] }}>
         <GameContext.Provider value={{ state: state, dispatch: dispatch }}>
 
 
@@ -41,7 +39,6 @@ function App() {
 
 
         </GameContext.Provider>
-        </DataProvider.Provider>
       )
     }
     </>
