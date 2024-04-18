@@ -83,6 +83,7 @@ const GameState = (state = initialGameState, action: Action) => {
         case 'CHANGE_ARMOR':
             const armor = action.Armor;
 
+            /*
             if (armor.type & ArmorTypeEnum.Helmet) {
                 return { ...state, Armors: { ...state.Armors, Helmet: armor } };
             } 
@@ -97,6 +98,18 @@ const GameState = (state = initialGameState, action: Action) => {
             } else {
                 throw new Error("The Armor Selected did not contain valid ArmorType - which is enum - in reducer");
             }
+            */
+            switch (armor.type) {
+                case ArmorTypeEnum.Helmet:
+                    return { ...state, Armors: { ...state.Armors, Helmet: armor } };
+                case ArmorTypeEnum.Chestplate:
+                    return { ...state, Armors: { ...state.Armors, Chestplate: armor } };
+                case ArmorTypeEnum.Leggings:
+                    return { ...state, Armors: { ...state.Armors, Leggings: armor } };
+                case ArmorTypeEnum.Boots:
+                    return { ...state, Armors: { ...state.Armors, Boots: armor } };
+            }
+            throw new Error("The Armor Selected did not contain valid ArmorType - which is enum - in reducer");
         case 'CHANGE_WEAPON':
             return { ...state, Weapon: action.weapon };
         case 'MOVE_PLAYER':
