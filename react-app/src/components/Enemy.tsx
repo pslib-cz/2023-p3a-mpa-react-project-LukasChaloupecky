@@ -9,8 +9,10 @@ type Enemy = {
     defense: number;
     health: number;
     type: EnemyTypeEnum; // ? Defines what cards are the most effective
-    difficulty: number; // ? At what difficulty will the enemy be avalible
-}
+
+    // TODO : Decide wheather it is usefull to use instead of the difficulty minDiff and maxDiff
+    difficulty: number; // ? At what difficulty will the enemy be avalibl
+    }
 
 enum EnemyEnum { 
     Minotaur,
