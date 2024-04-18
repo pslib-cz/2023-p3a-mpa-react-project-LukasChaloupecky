@@ -12,9 +12,8 @@ Figma: https://www.figma.com/file/6VEXmfq9UR0mF8NXTgDXc0/The-project?type=design
 
 -----------------------------------------------------------------------------------------------------
 
-# Název mého projektu, programu, hry...
-
-## Téma
+# Escape the dungeon
+## Fantasy board game
 
 Tady bude krátký a úderný popis o účelu, významu, funkcionalitě...
 
