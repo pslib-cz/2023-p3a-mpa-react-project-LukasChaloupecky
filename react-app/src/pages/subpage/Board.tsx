@@ -3,12 +3,9 @@ import MainPanel from '../pageComponents/MainPanel';
 import { GetEnemyCollection } from '../../components/methods/EnemyFunctions';
 import '../../styles/board.css'; 
 
-interface BoardProps {
-}
-
 
 // ? The Gaming Page
-const Board: React.FC<BoardProps> = () => {
+const Board = ({Enemies} : {Enemies : [EnemyBoard[] | undefined, React.Dispatch<React.SetStateAction<EnemyBoard[] | undefined>>]}) => {
     // ? BOARD IS 15x7
     return (
         <div>

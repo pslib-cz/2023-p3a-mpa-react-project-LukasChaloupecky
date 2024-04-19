@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { GameContext } from '../components/GameState';
 import MainPanel from './pageComponents/MainPanel';
 //import { DataProvider } from '../components/DataProvider';
-import Board from './subpage/Board';
 import { GetEnemyCollection } from '../components/methods/EnemyFunctions';
 import Shop from './subpage/Shop';
+import Board from './subpage/Board';
 
 export const MainPage: React.FC = () => {
     const Reducer = useState(GameContext);
@@ -26,7 +26,7 @@ export const MainPage: React.FC = () => {
     // TODO_1: Add grid as table
     return (
         <div className='mainPage'>
-            <Board />
+            <Board Enemies={[Enemies, setEnemies]} />
             <Shop />
         </div>
 
