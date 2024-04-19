@@ -6,13 +6,14 @@ import { GetEnemyCollection } from '../components/methods/EnemyFunctions';
 import Shop from './subpage/Shop';
 import Board from './subpage/Board';
 
-export const MainPage: React.FC = () => {
+export const MainPage = () => {
     const Reducer = useState(GameContext);
     //const Data = useState(DataProvider);
 
     // TODO: Figure out a valid approach (= playable) as parameters for GetEnemyCollection
-    const [Enemies, setEnemies] = useState<undefined | EnemyBoard[]>(); // ? these params are temporary here
-
+    const [Enemies, setEnemies] = useState<undefined | EnemyBoard[]>(); //  ? these are all the data that will be used (on init gotten from .json file)
+    const [Armors, setArmors] = useState<undefined | ArmorBoard[]>(); // ?  ? these are all the data that will be used (on init gotten from .json file)
+    const [Weapons, setWeapons] = useState<undefined | WeaponBoard[]>(); // ? these are all the data that will be used (on init gotten from .json file)
 
     const createBoard = () => {
         setEnemies(GetEnemyCollection({boardSize: 10, boardDifficulty: 50, minEnemyDifficulty: 1, maxEnemyDifficulty: 10}));

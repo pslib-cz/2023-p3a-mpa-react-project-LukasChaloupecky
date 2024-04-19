@@ -25,6 +25,7 @@ function App() {
       (
         <GameContext.Provider value={{ state: state, dispatch: dispatch }}>
           
+          // TODO_FINISH : add parameters so that a dataretriver can be haded over to board and used in the gameoplay
           <MainPage />
 
 
