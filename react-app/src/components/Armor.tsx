@@ -4,7 +4,7 @@ export type Armor = {
     name: string;
     description: string;
     imageUrl: string;
-    price: number;
+    basePrice: number;
     defense: number;
     level : number;
 };

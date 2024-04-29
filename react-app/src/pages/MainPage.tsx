@@ -11,6 +11,7 @@ export const MainPage = () => {
     const Reducer = useState(GameContext);
     //const Data = useState(DataProvider);
 
+    // TODO : add a container for all of the items in the shop that can be changed on a certain price ----- use Reducer
     // TODO: Figure out a valid approach (= playable) as parameters for GetEnemyCollection
     /* !
     const [Enemies, setEnemies] = useState<undefined | EnemyBoard[]>(); //  ? these are all the data that will be used (on init gotten from .json file)

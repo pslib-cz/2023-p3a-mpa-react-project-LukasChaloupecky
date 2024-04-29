@@ -3,8 +3,9 @@ export type Weapon = {
     name: string;
     description: string;
     imageUrl: string;
-    price: number;
+    basePrice: number;
     attack: number;
+    level : number;
 };
 
 
