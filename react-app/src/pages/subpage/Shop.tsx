@@ -7,6 +7,9 @@ const Shop: React.FC = () => {
         <div>
             <h1>Shop</h1>
             {/* Add your shop content here */}
+            // TODO : add shop keeper
+            // TODO : add shop content
+            // TODO : add content
         </div>
     );
 };

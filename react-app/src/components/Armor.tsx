@@ -6,6 +6,7 @@ export type Armor = {
     imageUrl: string;
     price: number;
     defense: number;
+    level : number;
 };
 
 export enum ArmorTypeEnum {
