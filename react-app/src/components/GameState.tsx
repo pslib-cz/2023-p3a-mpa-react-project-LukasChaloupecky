@@ -40,7 +40,8 @@ type GameState = {
     money: number;
     charm: number; // ? Determines the prices in the shop
     Armors: ArmorInventory;
-    Weapon : Weapon;
+    Weapon : Weapon; // ? ONLY ONE WEAPON, cant carry more than one 
+                    // ! BASED ON THAT ONE ONLYU -- CHANGE THE SHOP
     Cards: Card[];
     currentSpot : number; // ? Place on the board
 };
