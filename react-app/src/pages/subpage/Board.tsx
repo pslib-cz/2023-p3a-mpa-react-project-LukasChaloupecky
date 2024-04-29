@@ -2,10 +2,12 @@ import React from 'react';
 import MainPanel from '../pageComponents/MainPanel';
 import { GetEnemyCollection } from '../../components/methods/EnemyFunctions';
 import '../../styles/board.css'; 
+import { BoardSlot } from '../../components/BoardObjectTypes';
+import Table from '../pageComponents/Table';
 
 
 // ? The Gaming Page
-const Board = ({Enemies} : {Enemies : [EnemyBoard[] | undefined, React.Dispatch<React.SetStateAction<EnemyBoard[] | undefined>>]}) => {
+const Board = ({Board} : {Board : { state : BoardSlot[] | undefined, setState: React.Dispatch<React.SetStateAction<BoardSlot[] | undefined>>}}) => {
     // ? BOARD IS 15x7
     return (
         <div>
@@ -19,6 +21,7 @@ const Board = ({Enemies} : {Enemies : [EnemyBoard[] | undefined, React.Dispatch<
                     
                 </div>
             </div>
+            <Table Board={Board.state} setBoard={Board.setState} />
         </div>
     );
 };

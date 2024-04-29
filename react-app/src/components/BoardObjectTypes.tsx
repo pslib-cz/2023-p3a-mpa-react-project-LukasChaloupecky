@@ -1,12 +1,21 @@
-type EnemyBoard = {
+import { Armor } from "./Armor";
+import { Weapon } from "./Weapon";
+
+export type EnemyBoard = {
     Enemy : Enemy;
     Position : number;
 }
-type ArmorBoard = {
+export type ArmorBoard = {
     Armor : Armor;
     Position : number;
 }
-type WeaponBoard = {
+export type WeaponBoard = {
     Weapon : Weapon;
     Position : number;
+}
+
+export type BoardSlot = {
+    Enemy : EnemyBoard;
+    Armor : ArmorBoard;
+    Weapon : WeaponBoard;
 }
