@@ -19,7 +19,7 @@ Tady bude krátký a úderný popis o účelu, významu, funkcionalitě...
 ## Odkazy pro vývoj
 
 Zde budou živé linky na:
-Figma: [Go to UI](https://www.figma.com/file/6VEXmfq9UR0mF8NXTgDXc0/The-project?type=design&node-id=0%3A1&mode=design&t=eiEdHI8NbRarhnw5-1)
+- Figma: [Go to UI](https://www.figma.com/file/6VEXmfq9UR0mF8NXTgDXc0/The-project?type=design&node-id=0%3A1&mode=design&t=eiEdHI8NbRarhnw5-1)
 - odkaz na gh-pages projektu
 - odkaz do repozitáře projektu, pokud pracuji v teamu a zde vývoj neprobíhá
 
