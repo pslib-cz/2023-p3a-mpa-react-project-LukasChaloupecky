@@ -1,0 +1,17 @@
+.status {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+}
+.status__element {
+    background-color: bisque;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.status--vertical {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    height: 100%;
+}

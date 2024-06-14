@@ -1,0 +1,13 @@
+.gameState__state {
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+}
+
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}

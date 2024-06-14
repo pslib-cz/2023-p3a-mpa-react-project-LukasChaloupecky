@@ -1,0 +1,10 @@
+body {
+  width: 100%;
+
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/background/ominous-encounter-in-the-dark-dungeon-wallpapers-and-v0-_mCs10S2Qye-ezYCGaDeQGZEAaUsQR6TRc9mF-SOSM8.webp);
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
